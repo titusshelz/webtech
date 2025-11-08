@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Titus WebTech UG</title>
+<style>
+:root{
+  --navy:#0b3d91; --deep:#003366; --aqua:#00bcd4; --accent:#0097a7;
+  --muted:#f3f6f8; --card:#ffffff; --radius:12px; --max-width:1200px;
+}
+*{box-sizing:border-box;font-family:"Poppins",sans-serif;margin:0;padding:0;}
+body{background:linear-gradient(180deg,#f7fbfc,#eef4f8);color:#222;}
+.wrap{max-width:var(--max-width);margin:0 auto;padding:20px;}
+header{background:linear-gradient(90deg,var(--navy),var(--deep));color:#fff;padding:18px;border-radius:var(--radius);text-align:center;box-shadow:0 6px 20px rgba(0,0,0,0.1);font-size:28px;}
+nav{display:flex;justify-content:center;gap:16px;margin:16px 0;background-color:var(--deep);padding:10px;border-radius:12px;position:sticky;top:0;z-index:100;}
+nav a{color:#ffffff;text-decoration:none;font-weight:bold;font-size:18px;padding:8px 16px;border-radius:8px;transition:0.3s;}
+nav a:hover, nav a.active{background-color:var(--aqua);color:var(--deep);}
+section{display:none;padding:20px;}
+section.active{display:block;}
+.hero{display:flex;gap:20px;flex-wrap:wrap;background:var(--card);padding:30px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+.hero .col{flex:1;min-width:280px;}
+.hero h2{color:var(--navy);margin-bottom:10px;}
+.hero p{color:#555;font-size:18px;}
+.buttons{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;}
+.btn{padding:10px 14px;border:none;border-radius:10px;cursor:pointer;font-weight:600;transition:0.3s;}
+.btn.primary{background:var(--aqua);color:#fff;}
+.btn.primary:hover{background:var(--accent);}
+.btn.ghost{background:transparent;border:1px solid #ccc;color:#222;}
+.image-wrap{flex:1;min-width:280px;}
+.image-wrap img{width:100%;border-radius:var(--radius);box-shadow:0 6px 18px rgba(0,0,0,0.1);}
+.features{display:flex;gap:16px;flex-wrap:wrap;margin-top:20px;}
+.feature{background:var(--card);padding:16px;border-radius:var(--radius);flex:1;min-width:180px;box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+.feature h3{color:var(--navy);}
+.card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+.two-col{display:flex;gap:16px;flex-wrap:wrap;margin-top:20px;}
+.two-col .card{flex:1;min-width:260px;}
+.contact-grid{display:grid;grid-template-columns:1fr 320px;gap:16px;margin-top:16px;}
+.messages-box{background:var(--card);padding:16px;border-radius:var(--radius);display:flex;flex-direction:column;}
+.messages-scroll{flex:1;overflow:auto;padding:12px;border-radius:8px;background:#f9f9f9;max-height:250px;}
+.message{margin-bottom:10px;padding:8px;border-radius:8px;}
+.message.user{background:#c2f2ff;text-align:right;}
+.message.visit{background:#eaf6ff;text-align:left;}
+.form-control{width:100%;padding:10px;margin:6px 0;border:1px solid #ccc;border-radius:8px;}
+footer{margin-top:20px;text-align:center;color:#333;font-size:14px;}
+.hidden{display:none;}
+.confidential{background:#e0f7fa;padding:10px;margin:6px 0;border-radius:8px;border-left:4px solid var(--aqua);}
+.admin-list{margin-top:12px;padding:8px;background:#f9f9f9;border-radius:8px;}
+.admin-item{display:flex;justify-content:space-between;align-items:center;padding:6px;margin:4px 0;border-radius:6px;background:#e8f1f8;}
+@media (max-width:768px){
+  nav{flex-direction:column;align-items:center;}
+  .hero{flex-direction:column;}
+  .contact-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>Titus WebTech UG</header>
+<nav>
+<a href="#" onclick="navTo('home')" class="active">Home</a>
+<a href="#" onclick="navTo('about')">About</a>
+<a href="#" onclick="navTo('messages')">Messages</a>
+<a href="#" onclick="navTo('admin')">Admin</a>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active">
+<div class="hero">
+<div class="col">
+<h2>Welcome to Titus WebTech UG</h2>
+<p>Modern websites, custom software, and IT consulting services to elevate your business digitally.</p>
+<div class="buttons">
+<button class="btn primary" onclick="navTo('messages')">Get in Touch</button>
+<button class="btn ghost" onclick="navTo('about')">Learn More</button>
+</div>
+<div class="features">
+<div class="feature"><h3>Web Design</h3><img src="https://images.unsplash.com/photo-1581091215367-59ab6a2142ef?q=80&w=400&auto=format&fit=crop" style="width:100%;border-radius:8px;margin-top:8px;"><p>Responsive and modern websites.</p></div>
+<div class="feature"><h3>Software Solutions</h3><img src="https://images.unsplash.com/photo-1581093588401-7f5b9b1f8d1f?q=80&w=400&auto=format&fit=crop" style="width:100%;border-radius:8px;margin-top:8px;"><p>Custom business software.</p></div>
+<div class="feature"><h3>IT Consulting</h3><img src="https://images.unsplash.com/photo-1581093587594-d03f92965db7?q=80&w=400&auto=format&fit=crop" style="width:100%;border-radius:8px;margin-top:8px;"><p>Smart digital strategies.</p></div>
+</div>
+</div>
+<div class="image-wrap">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=700&auto=format&fit=crop" alt="WebTech Hero">
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="card">
+<h2>About Us</h2>
+<p>We are a Uganda-based digital agency delivering websites, software, and IT solutions with professionalism and creativity.</p>
+<div class="two-col">
+<div class="card"><h3>Who we are</h3><img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=400&auto=format&fit=crop" style="width:100%;border-radius:8px;margin-top:8px;"><p>Creative developers & designers focusing on secure, maintainable solutions.</p>
+<h4>Mission</h4><p>Empower local businesses with reliable digital solutions.</p>
+<h4>Vision</h4><p>Trusted digital partner across East Africa.</p></div>
+<div class="card"><h3>Services</h3>
+<ul>
+<li>Web design & development</li>
+<li>Custom applications</li>
+<li>E-commerce & payments</li>
+<li>Hosting & security</li>
+<li>SEO & analytics</li>
+<li>Branding & UI/UX design</li>
+</ul>
+<img src="https://images.unsplash.com/photo-1556157391-2c17b83ee6d6?q=80&w=400&auto=format&fit=crop" style="width:100%;border-radius:8px;margin-top:8px;">
+</div>
+</div>
+</div>
+</section>
+
+<!-- MESSAGES -->
+<section id="messages">
+<h2>Messages / Contact</h2>
+<div class="contact-grid">
+<div class="messages-box">
+<div class="messages-scroll" id="messagesScroll"></div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<input id="msgText" class="form-control" placeholder="Write a message">
+<button class="btn primary" onclick="submitMessage()">Send</button>
+</div>
+</div>
+<div class="card">
+<h3>Send Inquiry</h3>
+<input id="inqName" class="form-control" placeholder="Full name">
+<input id="inqEmail" class="form-control" placeholder="Email">
+<select id="inqService" class="form-control">
+<option>Website Design</option>
+<option>Software Development</option>
+<option>System Upgrade</option>
+<option>Consultation</option>
+</select>
+<textarea id="inqDetails" class="form-control" rows="4" placeholder="Project details"></textarea>
+<button class="btn primary" onclick="submitInquiry()">Submit</button>
+</div>
+</div>
+</section>
+
+<!-- ADMIN -->
+<section id="admin">
+<div id="admin-setup" class="hidden">
+<h2>Admin Setup</h2>
+<p>Create the first admin account</p>
+<input id="setupUser" class="form-control" placeholder="Username">
+<input id="setupPass" class="form-control" placeholder="Password">
+<button class="btn primary" onclick="createAdmin()">Create Admin</button>
+</div>
+
+<div id="admin-login">
+<h2>Admin Login</h2>
+<input id="adminUser" class="form-control" placeholder="Username">
+<input id="adminPass" type="password" class="form-control" placeholder="Password">
+<button class="btn primary" onclick="adminLogin()">Login</button>
+<p id="loginMsg"></p>
+</div>
+
+<div id="admin-dashboard" class="hidden">
+<h2>Admin Dashboard</h2>
+<p>Confidential messages and inquiries (admin only)</p>
+<div id="confidentialData"></div>
+
+<h3>Manage Admins</h3>
+<div class="card">
+<div style="display:flex;gap:8px;margin-bottom:6px;">
+<input id="newAdminUser" class="form-control" placeholder="New Admin Username">
+<input id="newAdminPass" type="password" class="form-control" placeholder="Password">
+<button class="btn primary" onclick="addAdmin()">Add Admin</button>
+</div>
+<div id="adminList" class="admin-list"></div>
+</div>
+
+<button class="btn ghost" onclick="logoutAdmin()">Logout</button>
+</div>
+</section>
+
+<footer>© <span id="year"></span> Titus WebTech UG</footer>
+</div>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+let admins=JSON.parse(localStorage.getItem('admins')||'[]');
+let session=JSON.parse(localStorage.getItem('session')||'null');
+let messages=JSON.parse(localStorage.getItem('messages')||'[]');
+let inquiries=JSON.parse(localStorage.getItem('inquiries')||'[]');
+
+function navTo(id){
+document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
+document.querySelector('nav a[onclick*="'+id+'"]').classList.add('active');
+if(id==='messages') renderMessages();
+if(id==='admin') showAdminView();
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderMessages(){
+const container=document.getElementById('messagesScroll');
+container.innerHTML='';
+messages.slice().reverse().forEach(m=>{
+const div=document.createElement('div');
+div.className=m.from==='User'?'message user':'message visit';
+div.textContent=`${m.from}: ${m.text}`;
+container.appendChild(div);
+});
+}
+
+function submitMessage(){
+const text=document.getElementById('msgText').value.trim();
+if(!text)return alert('Write a message');
+messages.push({from:'User',text});
+localStorage.setItem('messages',JSON.stringify(messages));
+document.getElementById('msgText').value='';
+renderMessages();
+}
+
+function submitInquiry(){
+const n=document.getElementById('inqName').value.trim();
+const e=document.getElementById('inqEmail').value.trim();
+const s=document.getElementById('inqService').value;
+const d=document.getElementById('inqDetails').value.trim();
+if(!n||!e||!d)return alert('Fill all fields');
+inquiries.push({name:n,email:e,service:s,details:d});
+localStorage.setItem('inquiries',JSON.stringify(inquiries));
+alert('Inquiry submitted');document.getElementById('inqName').value='';document.getElementById('inqEmail').value='';document.getElementById('inqDetails').value='';
+}
+
+function showAdminView(){
+if(admins.length===0){
+document.getElementById('admin-setup').classList.remove('hidden');
+document.getElementById('admin-login').classList.add('hidden');
+document.getElementById('admin-dashboard').classList.add('hidden');
+}else if(session){
+document.getElementById('admin-dashboard').classList.remove('hidden');
+document.getElementById('admin-login').classList.add('hidden');
+document.getElementById('admin-setup').classList.add('hidden');
+renderConfidential();
+renderAdminList();
+}else{
+document.getElementById('admin-login').classList.remove('hidden');
+document.getElementById('admin-setup').classList.add('hidden');
+document.getElementById('admin-dashboard').classList.add('hidden');
+}
+}
+
+function createAdmin(){
+const u=document.getElementById('setupUser').value.trim();
+const p=document.getElementById('setupPass').value;
+if(!u||!p)return alert('Enter username and password');
+admins.push({user:u,pass:p});
+localStorage.setItem('admins',JSON.stringify(admins));
+alert('Admin created. Now login.');
+showAdminView();
+}
+
+function adminLogin(){
+const u=document.getElementById('adminUser').value.trim();
+const p=document.getElementById('adminPass').value;
+const found=admins.find(a=>a.user===u && a.pass===p);
+if(found){
+session={user:u};
+localStorage.setItem('session',JSON.stringify(session));
+alert('Login successful');
+showAdminView();
+}else document.getElementById('loginMsg').textContent='Invalid login';
+}
+
+function logoutAdmin(){
+session=null;
+localStorage.removeItem('session');
+alert('Logged out');
+showAdminView();
+}
+
+function renderConfidential(){
+const container=document.getElementById('confidentialData');
+container.innerHTML='<h3>User Messages</h3>';
+messages.slice().reverse().forEach(m=>{
+const div=document.createElement('div');
+div.className='confidential';
+div.textContent=`From ${m.from}: ${m.text}`;
+container.appendChild(div);
+});
+container.innerHTML+='<h3>Inquiries</h3>';
+inquiries.slice().reverse().forEach(i=>{
+const div=document.createElement('div');
+div.className='confidential';
+div.innerHTML=`<strong>${i.name}</strong> (${i.email}) - ${i.service}: ${i.details}`;
+container.appendChild(div);
+});
+}
+
+function renderAdminList(){
+const list=document.getElementById('adminList');
+list.innerHTML='';
+admins.forEach((a,index)=>{
+const div=document.createElement('div');
+div.className='admin-item';
+div.innerHTML=`${a.user} <button class="btn ghost" onclick="removeAdmin(${index})">Remove</button>`;
+list.appendChild(div);
+});
+}
+
+function addAdmin(){
+const u=document.getElementById('newAdminUser').value.trim();
+const p=document.getElementById('newAdminPass').value;
+if(!u||!p)return alert('Enter username and password');
+admins.push({user:u,pass:p});
+localStorage.setItem('admins',JSON.stringify(admins));
+document.getElementById('newAdminUser').value='';
+document.getElementById('newAdminPass').value='';
+renderAdminList();
+alert('New admin added.');
+}
+
+function removeAdmin(index){
+if(!confirm('Are you sure you want to remove this admin?')) return;
+admins.splice(index,1);
+localStorage.setItem('admins',JSON.stringify(admins));
+renderAdminList();
+alert('Admin removed.');
+}
+
+// initial check
+showAdminView();
+</script>
+</body>
+</html>
